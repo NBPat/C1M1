@@ -9,19 +9,54 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file <Add stats.h> 
+ * @brief <Add header for statistics program >
  *
- * <Add Extended Description Here>
+ * <Add First assignment for embedded processing>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author <Add Patrick Fitzgerald>
+ * @date <Add 2019/06/16 >
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
+/* more details on functions provided in stats.c */
+// @brief - takes input char array and produces sorted output, largest to smallest
+
+unsigned char sort_array(char, int);
+
+
+// @brief first element of sorted array is already largest
+
+int find_maximum(char);
+
+
+// @brief last element is smallest
+
+int find_minimum(char, int);
+
+
+// @brief add all the char elements of the array and produce int sum, divide by number of elements
+
+float find_mean(char, int);
+
+
+// @brief add all the unique elements and divide by number of unique elements, float
+
+float find_median(char);
+
+
+// @brief print the elements of the char array with nice spacing, framing
+
+void print_array(char, int);
+
+
+// @brief print the output statistics in a nice format
+
+void print_statistics(float, float, int, int);
+
 
 /**
  * @brief <Add Brief Description of Function Here>
