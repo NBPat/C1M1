@@ -46,18 +46,19 @@ void main() {
 
 
     
-
+    printf("\nInput Array:\n");
     print_array(test, SIZE);
     sort_array(test, SIZE);
+    printf("\nSorted Array:\n");
     print_array(test, SIZE);
 
 
 maximum = find_maximum(test);
-printf("  showmax %d\n", maximum);
 minimum = find_minimum(test, SIZE);
-printf("  shomin %d\n", minimum);
+mean = find_mean(test, SIZE);
+median = find_median(test, SIZE);
 
-
+print_statistics(maximum, minimum, mean, median);
 
 }
 
@@ -75,9 +76,6 @@ unsigned char * sort_array(unsigned char * local, int localSize) {
 	  }}return local;}
 
 
-
-
-
 // in the sorted array, the maximum will be the first element
 
 int find_maximum(unsigned char * local) {
@@ -89,9 +87,35 @@ int find_maximum(unsigned char * local) {
 int find_minimum(unsigned char * local, int localSize) {
   return local[localSize-1];
 }
+
+// the mean is the average, the total of all elements
+// divided by the number of elements
+float find_mean(unsigned char * local, int localSize) {
+	int total = 0; 
+	for (int i = 0; i <localSize ; i++) {
+		total = total + local[i];}
+	float mean = total/localSize;
+	return mean;}
+
+
+// the median is the sum of the unique elements of the array
+// divided by the count of unique elements
+float find_median(unsigned char * local, int localSize) {
+	int total = 0; int count = 0;
+	for (int i = 0; i < localSize ; i++) {
+		if (local[i] > local[i+1]) {total = total + local[i]; count++;}
+	}
+	float median = total/count;
+	return median;}
+
 // print_array
 void print_array(unsigned char * local, int localSize) {
 for (int i = 0; i < localSize; i++) {printf("element %d:  %d\n", i, local[i]);}
 }
+
+// print_statistics
+void print_statistics(int maxVal, int minVal, float meanVal, float medianVal) {
+	printf("\nStatistics for array:\n");
+	printf("Maximum:  %d  Minimum:  %d  Mean:  %6.2f  Median:  %6.2f  \n", maxVal, minVal, meanVal, medianVal);}
 
 

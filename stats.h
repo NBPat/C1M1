@@ -40,12 +40,12 @@ int find_minimum(unsigned char *, int);
 
 // @brief add all the char elements of the array and produce int sum, divide by number of elements
 
-float find_mean(char, int);
+float find_mean(unsigned char *, int);
 
 
 // @brief add all the unique elements and divide by number of unique elements, float
 
-float find_median(char);
+float find_median(unsigned char *, int);
 
 
 // @brief print the elements of the char array with nice spacing, framing
@@ -55,7 +55,7 @@ void print_array(unsigned char *, int);
 
 // @brief print the output statistics in a nice format
 
-void print_statistics(float, float, int, int);
+void print_statistics(int, int, float, float);
 
 
 /**
