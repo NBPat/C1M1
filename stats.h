@@ -25,17 +25,17 @@
 /* more details on functions provided in stats.c */
 // @brief - takes input char array and produces sorted output, largest to smallest
 
-unsigned char sort_array(char, int);
+unsigned char * sort_array(unsigned char *, int);
 
 
 // @brief first element of sorted array is already largest
 
-int find_maximum(char);
+int find_maximum(unsigned char *);
 
 
 // @brief last element is smallest
 
-int find_minimum(char, int);
+int find_minimum(unsigned char *, int);
 
 
 // @brief add all the char elements of the array and produce int sum, divide by number of elements
@@ -50,7 +50,7 @@ float find_median(char);
 
 // @brief print the elements of the char array with nice spacing, framing
 
-void print_array(char, int);
+void print_array(unsigned char *, int);
 
 
 // @brief print the output statistics in a nice format
