@@ -28,7 +28,7 @@
 #define SIZE (40)
 
 void main() {
-
+// original array will be overwritten by sorted array
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
@@ -43,8 +43,7 @@ void main() {
   int minimum;   //last element of sorted array.  casts to int
 
   /* Statistics and Printing Functions Go Here, declarations */
-
-
+  // print_array is used to show array before and after sorting
     
     printf("\nInput Array:\n");
     print_array(test, SIZE);
@@ -52,19 +51,24 @@ void main() {
     printf("\nSorted Array:\n");
     print_array(test, SIZE);
 
+  // generation of statistics
+    maximum = find_maximum(test);
+    minimum = find_minimum(test, SIZE);
+    mean = find_mean(test, SIZE);
+    median = find_median(test, SIZE);
 
-maximum = find_maximum(test);
-minimum = find_minimum(test, SIZE);
-mean = find_mean(test, SIZE);
-median = find_median(test, SIZE);
-
-print_statistics(maximum, minimum, mean, median);
+  // printing of statistics
+    print_statistics(maximum, minimum, mean, median);
 
 }
 
 /* Add other Implementation File Code Here */
+
 // bubble sort.  Each value is compared its neighbour.  
 // the lower of the two is placed further down the array
+// the input array is input as unsigned character type
+// the return is also an array of the same type
+//
 unsigned char * sort_array(unsigned char * local, int localSize) {
   for (int i = 0; i < localSize-1; i++) //for all members of the array
   {for (int j = 0; j < localSize -i -1; j++)

@@ -24,32 +24,32 @@
 /* Add Your Declarations and Function Comments here */ 
 /* more details on functions provided in stats.c */
 // @brief - takes input char array and produces sorted output, largest to smallest
-
+// integer is the length of the array
 unsigned char * sort_array(unsigned char *, int);
 
 
 // @brief first element of sorted array is already largest
-
+// char casts to int
 int find_maximum(unsigned char *);
 
 
 // @brief last element is smallest
-
+// needs int input of length of the array, SIZE parameter
 int find_minimum(unsigned char *, int);
 
 
-// @brief add all the char elements of the array and produce int sum, divide by number of elements
-
+// @brief add all the char elements of the array and produce int sum, divide by int number of elements
+// float from dividing two integer-like types
 float find_mean(unsigned char *, int);
 
 
-// @brief add all the unique elements and divide by number of unique elements, float
-
+// @brief integer add all the unique elements and divide integer by number of unique elements, float
+// 
 float find_median(unsigned char *, int);
 
 
 // @brief print the elements of the char array with nice spacing, framing
-
+// function needs the character array input and integer SIZE for how many members or elements
 void print_array(unsigned char *, int);
 
 
